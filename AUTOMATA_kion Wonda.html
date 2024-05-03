@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Number Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Scientific Number Checker</h1>
+    <h2>Kion Wonda (NIM 221011060079)</h2>
+    <input type="text" id="numberInput" placeholder="Enter a number">
+    <button onclick="checkScientificNumber()">Check</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function checkScientificNumber() {
+      var number = document.getElementById("numberInput").value;
+      var regex = /^[-+]?(\d+(\.\d*)?|\.\d+)([eE][-+]?\d+)?$/;
+
+      if (regex.test(number)) {
+        document.getElementById("result").innerText = "It's a scientific number.";
+      } else {
+        document.getElementById("result").innerText = "It's not a scientific number.";
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
